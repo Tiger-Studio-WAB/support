@@ -1,0 +1,120 @@
+name: Broken page / 页面损坏 / Defekte Seite
+description: A hub page is blank, 404, or wrong. 站点页面空白、404 或内容不对。Eine Hub-Seite ist leer, 404 oder falsch.
+title: "[Broken page]: "
+labels: ["broken-page"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### English
+        Use this when a **hub** page is wrong (`/`, `/docs`, `/ideas`, `/support`, and the rest).
+        Product bugs go on that product’s repo (for example [wab-project-1](https://github.com/Tiger-Studio-WAB/wab-project-1/issues)).
+        How-tos belong in the [handbook](https://tiger-studio-website.vercel.app/docs).
+
+        ### 中文
+        当 **站点上的页面** 不对时用此表单（`/`、`/docs`、`/ideas`、`/support` 等）。
+        具体产品的缺陷请开到那个仓库（例如 [wab-project-1](https://github.com/Tiger-Studio-WAB/wab-project-1/issues)）。
+        操作说明请看 [手册](https://tiger-studio-website.vercel.app/docs)。
+
+        ### Deutsch (Entwurf — Mingli29)
+        Nutze das, wenn eine **Hub-Seite** falsch ist (`/`, `/docs`, `/ideas`, `/support` und die übrigen).
+        Produktfehler gehören ins jeweilige Repo (zum Beispiel [wab-project-1](https://github.com/Tiger-Studio-WAB/wab-project-1/issues)).
+        Anleitungen stehen im [Handbuch](https://tiger-studio-website.vercel.app/docs).
+
+  - type: dropdown
+    id: reply-language
+    attributes:
+      label: Preferred reply language / 希望回复的语言 / bevorzugte Antwortsprache
+      options:
+        - English
+        - 中文
+        - Deutsch
+    validations:
+      required: true
+
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL / 页面网址 / Seiten-URL
+      description: |
+        English: Full address of the broken page.
+        中文：出问题页面的完整网址。
+        Deutsch: Vollständige Adresse der kaputten Seite.
+      placeholder: https://tiger-studio-website.vercel.app/docs/...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: what-you-saw
+    attributes:
+      label: What you saw / 你看到了什么 / Was du gesehen hast
+      options:
+        - Blank page / 空白页 / leere Seite
+        - 404 or missing / 404 或缺失 / 404 oder fehlt
+        - Error message / 报错 / Fehlermeldung
+        - Wrong content / 内容不对 / falscher Inhalt
+        - Wrong language / 语言不对 / falsche Sprache
+        - Missing images / 图片缺失 / fehlende Bilder
+        - Other / 其他 / anderes
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected / 你以为会怎样 / Was du erwartet hast
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened / 实际怎样 / Was tatsächlich passiert ist
+      description: |
+        English: Steps if you can: open this URL, click that, then this appears.
+        中文：能写步骤就写：打开这个网址，点哪里，然后出现什么。
+        Deutsch: Schritte, wenn möglich: URL öffnen, hier klicken, dann erscheint das.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser / 浏览器 / Browser
+      options:
+        - Chrome
+        - Safari
+        - Edge
+        - Firefox
+        - Other / 其他 / anderer
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device / 设备 / Gerät
+      description: |
+        English: Phone, tablet, or computer, plus OS if you know it.
+        中文：手机、平板或电脑，知道的话加上系统。
+        Deutsch: Handy, Tablet oder Computer, plus Betriebssystem wenn bekannt.
+      placeholder: MacBook / iPhone / Windows PC
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot or extra detail / 截图或其他细节 / Screenshot oder Extra
+      description: |
+        English: Drag an image into this box if you can.
+        中文：可以的话把截图拖进这个框。
+        Deutsch: Screenshot hierher ziehen, wenn möglich.
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation / 确认 / Bestätigung
+      options:
+        - label: I looked at open support issues first. / 我已先看过未关闭的支持议题。 / Ich habe zuerst die offenen Support-Issues geprüft.
+          required: true
+        - label: This is a hub page problem, not a how-to and not a product-repo bug. / 这是站点页面问题，不是操作说明，也不是某个产品仓库的缺陷。 / Das ist ein Hub-Seitenproblem, keine Anleitung und kein Produkt-Repo-Bug.
+          required: true

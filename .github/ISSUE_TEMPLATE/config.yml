@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Handbook / 手册 / Handbuch
+    url: https://tiger-studio-website.vercel.app/docs
+    about: How-tos live in Docs, not here.
+  - name: Join / Proj.Help
+    url: https://tiger-studio-website.vercel.app/join
+    about: Sign in and post an idea on the hub.
+  - name: Support page on the hub
+    url: https://tiger-studio-website.vercel.app/support
+    about: Same help copy as this README.

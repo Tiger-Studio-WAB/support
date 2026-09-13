@@ -1,0 +1,127 @@
+name: Sign-in problem / 登录问题 / Anmeldeproblem
+description: GitHub or Microsoft sign-in did not finish. 登录没有完成。Anmeldung ist nicht durchgelaufen.
+title: "[Sign-in]: "
+labels: ["sign-in"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### English
+        Use this form when GitHub or Microsoft sign-in stopped, looped, or opened `/auth/error`.
+        How-tos belong in the [handbook](https://tiger-studio-website.vercel.app/docs), not here.
+        Try the other provider first (GitHub if Microsoft fails). Copy any red error text from `/auth/error`.
+
+        ### 中文
+        登录中断、循环，或跳到 `/auth/error` 时用此表单。
+        操作说明请看 [手册](https://tiger-studio-website.vercel.app/docs)，不要写在这里。
+        请先换一种登录方式试试（Microsoft 失败就用 GitHub）。把 `/auth/error` 上的红色错误文字复制下来。
+
+        ### Deutsch (Entwurf — Mingli29)
+        Nutze dieses Formular, wenn GitHub- oder Microsoft-OAuth abbricht, im Kreis läuft oder `/auth/error` öffnet.
+        Anleitungen stehen im [Handbuch](https://tiger-studio-website.vercel.app/docs).
+        Probiere zuerst den anderen Anbieter (GitHub, wenn Microsoft scheitert). Kopiere den roten Fehlertext von `/auth/error`.
+
+  - type: dropdown
+    id: reply-language
+    attributes:
+      label: Preferred reply language / 希望回复的语言 / bevorzugte Antwortsprache
+      options:
+        - English
+        - 中文
+        - Deutsch
+    validations:
+      required: true
+
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Which sign-in did you use? / 你用了哪种登录？ / Welchen Anbieter?
+      description: |
+        English: The button you clicked on Join or Login.
+        中文：你在「加入」或「登录」页点的按钮。
+        Deutsch: Der Button auf Join oder Login.
+      options:
+        - GitHub
+        - Microsoft
+        - Both / 两个都试过 / beide
+        - Not sure / 不确定 / unsicher
+    validations:
+      required: true
+
+  - type: input
+    id: failed-url
+    attributes:
+      label: URL after it failed / 失败后的网址 / URL danach
+      description: |
+        English: Full address in the address bar, including `/auth/error` query text if present.
+        中文：地址栏里的完整网址，如有 `/auth/error` 参数一并写上。
+        Deutsch: Vollständige Adresszeile, inklusive `/auth/error`-Parametern.
+      placeholder: https://tiger-studio-website.vercel.app/auth/error?...
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened / 发生了什么 / Was ist passiert
+      description: |
+        English: Which button, what you saw, and what you expected.
+        中文：你点了哪个按钮、看到了什么、以为会怎样。
+        Deutsch: Welcher Button, was du gesehen hast, was du erwartet hast.
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-text
+    attributes:
+      label: Error text / 错误原文 / Fehlertext
+      description: |
+        English: Paste the red message from `/auth/error`, or write “none”.
+        中文：粘贴 `/auth/error` 上的红色文字；没有就写「无」。
+        Deutsch: Roten Text von `/auth/error` einfügen, sonst „keiner“.
+      placeholder: none
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser / 浏览器 / Browser
+      options:
+        - Chrome
+        - Safari
+        - Edge
+        - Firefox
+        - Other / 其他 / anderer
+    validations:
+      required: true
+
+  - type: dropdown
+    id: school-wifi
+    attributes:
+      label: School Wi-Fi? / 是否在用学校 Wi-Fi？ / Schul-WLAN?
+      options:
+        - Yes / 是 / Ja
+        - No / 否 / Nein
+        - Not sure / 不确定 / unsicher
+    validations:
+      required: true
+
+  - type: textarea
+    id: already-tried
+    attributes:
+      label: What you already tried / 已经试过什么 / Schon versucht
+      description: |
+        English: Other provider, another browser, private window.
+        中文：换过登录方式、换过浏览器、用过无痕窗口等。
+        Deutsch: Anderer Anbieter, anderer Browser, privates Fenster.
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation / 确认 / Bestätigung
+      options:
+        - label: I looked at open support issues first. / 我已先看过未关闭的支持议题。 / Ich habe zuerst die offenen Support-Issues geprüft.
+          required: true
+        - label: This is a sign-in failure, not a how-to question. / 这是登录失败，不是操作说明问题。 / Das ist ein Anmeldefehler, keine Anleitung.
+          required: true
