@@ -1,0 +1,86 @@
+name: Need a human / 需要人工帮助 / Menschliche Hilfe
+description: Access, a club question, or you are stuck after Docs. 权限、社团事务，或手册读完仍卡住。Zugriff, Clubfrage, oder nach dem Handbuch fest.
+title: "[Human]: "
+labels: ["need-human"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### English
+        Use this when you need a person from Tiger Studio — repo access, a club question, or you are stuck after reading Docs.
+        Sign-in failures → **Sign-in problem**. Wrong hub URL → **Broken page**. How-tos → [handbook](https://tiger-studio-website.vercel.app/docs).
+
+        ### 中文
+        需要 Tiger Studio 的人帮忙时用此表单：仓库权限、社团事务，或手册读完了仍然卡住。
+        登录失败请用 **登录问题**。站点网址不对请用 **页面损坏**。操作说明请看 [手册](https://tiger-studio-website.vercel.app/docs)。
+
+        ### Deutsch (Entwurf — Mingli29)
+        Nutze das, wenn du jemanden aus Tiger Studio brauchst — Repo-Zugriff, eine Clubfrage, oder du kommst nach dem Handbuch nicht weiter.
+        Anmeldefehler → **Anmeldeproblem**. Falsche Hub-URL → **Defekte Seite**. Anleitungen → [Handbuch](https://tiger-studio-website.vercel.app/docs).
+
+  - type: dropdown
+    id: reply-language
+    attributes:
+      label: Preferred reply language / 希望回复的语言 / bevorzugte Antwortsprache
+      options:
+        - English
+        - 中文
+        - Deutsch
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of help? / 需要哪类帮助？ / Welche Art Hilfe?
+      options:
+        - Repo or org access / 仓库或组织权限 / Repo- oder Org-Zugriff
+        - Club or studio question / 社团或工作室问题 / Club- oder Studiofrage
+        - Stuck after reading Docs / 读完手册仍卡住 / Nach Docs fest
+        - Something else / 其他 / etwas anderes
+    validations:
+      required: true
+
+  - type: textarea
+    id: ask
+    attributes:
+      label: What do you need? / 你需要什么？ / Was brauchst du?
+      description: |
+        English: Be specific. Name the repo or page if this is about access or a stuck guide.
+        中文：尽量具体。如果是权限或某篇指南卡住，请写出仓库或页面。
+        Deutsch: Bitte konkret. Repo oder Seite nennen, wenn es um Zugriff oder eine feststeckende Anleitung geht.
+    validations:
+      required: true
+
+  - type: textarea
+    id: already-tried
+    attributes:
+      label: What you already tried / 已经试过什么 / Schon versucht
+      description: |
+        English: Docs pages you read, people you asked, buttons you clicked.
+        中文：读过哪些手册、问过谁、点过什么。
+        Deutsch: Gelesene Doc-Seiten, gefragte Personen, geklickte Buttons.
+    validations:
+      required: true
+
+  - type: input
+    id: contact
+    attributes:
+      label: How we can reach you / 我们怎么联系你 / Wie wir dich erreichen
+      description: |
+        English: GitHub handle is enough. Add another channel only if you want it.
+        中文：GitHub 用户名就够了。只有你希望时才加其他联系方式。
+        Deutsch: GitHub-Handle reicht. Anderen Kanal nur angeben, wenn du das möchtest.
+      placeholder: "@your-github"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation / 确认 / Bestätigung
+      options:
+        - label: I looked at open support issues first. / 我已先看过未关闭的支持议题。 / Ich habe zuerst die offenen Support-Issues geprüft.
+          required: true
+        - label: This is not a how-to that already lives in Docs. / 这不是手册里已经有的操作说明。 / Das ist keine Anleitung, die bereits in Docs steht.
+          required: true
